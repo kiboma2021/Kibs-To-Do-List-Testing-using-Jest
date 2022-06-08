@@ -178,4 +178,4 @@ const clearAll = () => {
 
 clearContent.addEventListener ('click', clearAll);
 
-module.exports = {addTodo , removeTodo}
+module.exports = addTodo;
