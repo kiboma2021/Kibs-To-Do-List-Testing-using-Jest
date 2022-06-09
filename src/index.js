@@ -62,7 +62,7 @@ const addTodo = toDovalue => {
       removeTodo(i.parentElement);
     })
   })
-  return myTodoList;
+  return object;
 };
 
 //Add editTodo function
