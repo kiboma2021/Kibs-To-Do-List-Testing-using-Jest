@@ -1,4 +1,4 @@
-import './style.css';
+//import './style.css';
 import updateLocal from './status_update.js'
 
 //Reference HTML
@@ -26,7 +26,7 @@ const addTodo = toDovalue => {
   <span class="edit-to-do"> <i class="fa fa-ellipsis-v"></i></span>
   <span class="remove-icon"><i class="fa fa-trash-alt" ></i></span>
   `
-  todoList.appendChild(toDocontainer);
+  //todoList.appendChild(toDocontainer);
 
 
   const checkbox = document.querySelectorAll('.checkbox');
@@ -43,6 +43,7 @@ const addTodo = toDovalue => {
   //Add items to Local Storage
   const object = new myObject (toDovalue, false, checkbox.length )
   myTodoList.push(object);
+
   localStorage.setItem ('List', JSON.stringify(myTodoList));
 
   //Edit todo list
@@ -61,6 +62,7 @@ const addTodo = toDovalue => {
       removeTodo(i.parentElement);
     })
   })
+  return myTodoList;
 };
 
 //Add editTodo function
@@ -101,12 +103,12 @@ const removeTodo = (todo) => {
 }
 
 //Add event lister when enter is clicked while in input field
-myInput.addEventListener ('keypress', e => {
-  if (e.key === 'Enter' && myInput.value ) {
-    addTodo(myInput.value);
-    myInput.value = null;
-  }
-})
+// myInput.addEventListener ('keypress', e => {
+//   if (e.key === 'Enter' && myInput.value ) {
+//     addTodo(myInput.value);
+//     myInput.value = null;
+//   }
+// })
 
 //Get data from local storage
 const getFromLocal = () => {
@@ -174,6 +176,6 @@ const clearAll = () => {
   window.location.reload();
 }
 
-clearContent.addEventListener ('click', clearAll);
+//clearContent.addEventListener ('click', clearAll);
 
 module.exports = addTodo;
